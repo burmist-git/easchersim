@@ -1,0 +1,5 @@
+./MakefileHelper.sh --condaenv easchersim
+conda install python
+python --version
+python -m pip install EASCherSim
+conda install -c conda-forge root=6.22.8
