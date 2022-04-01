@@ -5,12 +5,13 @@
 
 function printHelp {
     echo " --> ERROR in input arguments "
-    echo " [0] -d       : run easchersim"
-    echo "     showerID : shower ID"
-    echo " [0] -setdef  : set by default easchersim in terminal"
-    echo " [0] -test    : run test"
-    echo " [0] -i       : install"
-    echo " [0] -h       : print help"
+    echo " [0] -d          : run easchersim"
+    echo "     showerID    : shower ID"
+    echo " [0] -setdef     : set by default easchersim in terminal"
+    echo " [0] -test       : run test"
+    echo " [0] -i          : install"
+    echo " [0] -setCluster : set up cluster conda on yggdrasil"
+    echo " [0] -h          : print help"
 }
 
 function run_easchersim {
@@ -41,6 +42,10 @@ else
         else
             printHelp
         fi
+    elif [ "$1" = "-setCluster" ]; then
+	module load Anaconda3
+	conda activate easchersim
+	module list
     elif [ "$1" = "-h" ]; then
 	easchersim --help 
 	easchersim make-config --help
