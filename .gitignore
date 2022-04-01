@@ -1,0 +1,9 @@
+*~
+*.pdf
+*.eps
+obj
+data
+hist
+*.root
+screenlog.0
+ini
