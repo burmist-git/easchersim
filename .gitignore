@@ -7,3 +7,9 @@ hist
 *.root
 screenlog.0
 ini
+condarc_old
+job_error
+job_output
+npz
+root
+test.ini.npz
