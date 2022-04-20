@@ -5,7 +5,8 @@ n_jobs=544
 
 function printHelp {
     echo " --> ERROR in input arguments "
-    echo " [0] -d    : default"
+    echo " [0] -d    : default - simulation easchersim"
+    echo " [0] -conv : convert npz to root"
     echo " [0] -info : print info"
     echo " [0] -kill : kill all jobs"
     echo " [0] -h    : print help"
@@ -20,6 +21,13 @@ else
             jobID=`printf "%05d" $i`
 	    sbatch $genHomeDir/easchersim_job.sh -d $jobID
 	    #echo "sbatch $genHomeDir/easchersim_job.sh -d $jobID"
+	done
+    elif [ "$1" = "-conv" ]; then
+	for i in $(seq 0 $n_jobs); do
+            jobID=`printf "%05d" $i`
+	    sbatch $genHomeDir/conv.sh -d $jobID
+	    #time source conv.sh -d 00000
+	    echo "sbatch $genHomeDir/conv.sh -d $jobID"
 	done
     elif [ "$1" = "-info" ]; then
 	squeue | head -n 1

@@ -11,7 +11,7 @@
 
 function printHelp {
     echo " --> ERROR in input arguments "
-    echo " [0] -d    : single root file"
+    echo " [0] -d    : single job"
     echo " [1]       : jobID"
     echo " [0] -h    : print help"
 }
